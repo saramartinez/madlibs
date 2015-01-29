@@ -1,33 +1,34 @@
-from random import choice
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
-
-# "__name__" is a special Python variable for the name of the current module; Flask wants
-# to know this to know what any imported things are relative to.
 app = Flask(__name__)
 
 # route to handle the landing page of a website.
 @app.route('/')
-def start_here():
-    return "Hi! This is the home page."
-
-# route to display a simple web page
-@app.route('/hello')
-def say_hello():
+def index():
     return render_template("hello.html")
 
-@app.route('/greet')
-def greet_person():
-    player = request.args.get("person")
+# route to begin playing game
+@app.route('/game')
+def show_game_form():
+    user_choice = request.args.get("choice")
+    if user_choice == "no":
+        return redirect('/goodbye')
+    else:
+        return render_template("game.html", choice = user_choice)
 
-    AWESOMENESS = [
-        'awesome', 'terrific', 'fantastic', 'neato', 'fantabulous', 'wowza', 'oh-so-not-meh',
-        'brilliant', 'ducky', 'coolio', 'incredible', 'wonderful', 'smashing', 'lovely']
+@app.route('/goodbye')
+def bye():
+    return render_template("goodbye.html")
 
-    compliment = choice(AWESOMENESS)
-
-    return render_template("compliment.html", person=player, compliment=compliment)
-
+# madlib route to play game
+@app.route('/madlib')
+def show_madlib():
+    name = request.args.get("username")
+    person = request.args.get("person")
+    color = request.args.get("color")
+    adjective = request.args.get("adjective")
+    noun = request.args.get("noun")
+    return render_template("madlib.html", username = name, person = person, noun = noun, adjective = adjective, color = color)
 
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads" our web app

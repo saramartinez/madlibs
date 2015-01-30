@@ -7,11 +7,35 @@
 <h1>Make a MadLib</h1>
 <p>Welcome to MadLibs! Please fill in all fields below, and we'll tell you a story</p>
 <form action="/madlib">
-    <label for="username">Your Name: </label><input type="text" id="username" name="username"><br>
-    <label for="color">Color: </label><input type="text" id="color" name="color"><br>
-    <label for="noun">Noun: </label><input type="text" id="noun" name="noun"><br>
-    <label for="adjective">Adjective: </label><input type="text" id="adjective" name="adjective"><br>
-    <label for="person">Person: </label><input type="text" id="person" name="person">
+    
+    <label>Your Name: <input type="text" name="username"></label><br>
+    
+    <label>Color: <input type="text" name="color"></label><br>
+    
+    <label>Noun: <input type="text" name="noun"></label><br>
+    
+    <label>Verb (past tense): <input type="text" name="verb"></label><br>
+
+    <label>Adjective: <input type="text" name="adjective"></label><br>
+    
+    <label>Person: <input type="text" name="person"></label><br>
+
+    Fave Justin: <select name="justin">
+        <label><option value="Justin Timberlake">Timberlake</option></label>
+        <label><option value="Justin Bieber">Bieber</option></label>
+        <label><option value="Justin Long">Long</option></label>
+    </select><br>
+
+    Choose a direction: 
+    <label><input type="radio" name="direction" value="left">Left</label>
+    <label><input type="radio" name="direction" value="right">Right</label>
+    <br>
+
+    Your feelings: 
+    <label><input type="checkbox" name="feelings" value="happy">Happy!</label>
+    <label><input type="checkbox" name="feelings" value="stressed">STRESSED.</label>
+    <label><input type ="checkbox" name="feelings" value="daydreamy">~Daydreamy~</label>
+
 <br><input type="submit" value="Tell me a story!!">
 </form>
 </body>

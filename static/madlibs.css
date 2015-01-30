@@ -31,9 +31,7 @@ h1, p {
 .home {
     text-align: center;
 }
-/*
-.button{
-    display: inline-block;
-    text-align: center;
+
+#thanks {
+    font-size: 0.8em;
 }
-*/

@@ -7,15 +7,23 @@
 <body>
 <h1>Make a MadLib</h1>
 <p>Welcome to MadLibs! Please fill in all fields below, and we'll tell you a story.</p>
-<form action="/madlib">
+<form action="/madlib" method="POST">
     
     <label><strong>Your Name:</strong> <input type="text" name="username"></label><br>
     
     <label><strong>Color: </strong><input type="text" name="color"></label><br>
     
-    <label><strong>Noun: </strong><input type="text" name="noun"></label><br>
-    
-    <label><strong>Verb (past tense): </strong><input type="text" name="verb"></label><br>
+    <label><strong>Noun: </strong><input type="text" name="noun1"></label><br>
+
+    <label><strong>Noun: </strong><input type="text" name="noun2"></label><br>
+
+    <label><strong>Verb (present tense): </strong><input type="text" name="presentverb1"></label><br>
+
+    <label><strong>Verb (present tense): </strong><input type="text" name="presentverb2"></label><br>
+
+    <label><strong>Verb (past tense): </strong><input type="text" name="pastverb1"></label><br>
+
+    <label><strong>Verb (past tense): </strong><input type="text" name="pastverb2"></label><br>
 
     <label><strong>Adjective: </strong><input type="text" name="adjective"></label><br>
     
@@ -24,7 +32,6 @@
     <strong>Fave Justin: </strong><select name="justin">
         <label><option value="Justin Timberlake">Timberlake</option></label>
         <label><option value="Justin Bieber">Bieber</option></label>
-        <label><option value="Justin Long">Long</option></label>
     </select><br>
 
     <strong>Choose a direction: </strong>

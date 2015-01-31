@@ -17,6 +17,7 @@ def show_game_form():
     else:
         return render_template("game.html", choice = user_choice)
 
+# route if they say no on first page
 @app.route('/goodbye')
 def bye():
     return render_template("goodbye.html")
@@ -69,16 +70,6 @@ def show_madlib():
     compliments = sample(AWESOMENESS, 3)
 
     return render_template(html_choice, username = name, person = person, noun1 = noun1, noun2 = noun2, adjective = adjective, color = color, justin = justin, direction = direction, feelings = feeling, presentverb1 = presentverb1, presentverb2 = presentverb2, pastverb1 = pastverb1, pastverb2 = pastverb2, compliments = compliments )
-
-
-def greet_person():
-    player = request.args.get("person")
-
-
-
-    return render_template("compliment.html", person=player, compliment=compliment)
-
-
 
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads" our web app
